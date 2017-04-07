@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,13 +24,14 @@ public class PolicyController {
 	@Autowired
 	private PolicyService policyService;
 	
+	@CrossOrigin(origins="*")
 	@RequestMapping(value="/getAllPolicy",method=RequestMethod.POST)
 	public List<Policy> getAllPolicy(@RequestBody User user) {
 		
 		log.info("Get All Policy Service Started");
 		List<Policy> policies = null;
 		try {
-			policies = policyService.getAllPolicy(user);
+			policies = policyService.getAllPolicy(user.getUserName());
 		} catch(Exception exception) {
 			log.error("Exception Occured while executing Get All Policies Service.\n" + exception);
 		}
@@ -37,11 +39,12 @@ public class PolicyController {
 		return policies;
 	}
 	
+	@CrossOrigin(origins="*")
 	@RequestMapping(value="/getPolicy",method=RequestMethod.POST)
 	public Policy getPolicy(@RequestBody Policy policy) {
 		log.info("Get Policy Service Started");
 		try {
-			policy = policyService.getPolicy(policy);
+			policy = policyService.getPolicy(policy.getPolicyId());
 		} catch(Exception exception) {
 			log.error("Exception Occured while executing Get Policy Service.\n" + exception);
 		}
