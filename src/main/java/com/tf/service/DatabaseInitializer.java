@@ -49,7 +49,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		policy.setUser(user);
 		policy.setPolicyDate(calendar.getTime());
 		policy.setPremium(12000F);
-		policy.setStatus("Y");
+		policy.setStatus('Y');
 		policy.setTerm(5);
 		policy.setSumAssured(2000000F);
 		policyRepo.save(policy);
@@ -81,7 +81,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		policy.setPolicyDate(calendar.getTime());
 		policy.setUser(user2);
 		policy.setPremium(10000F);
-		policy.setStatus("Y");
+		policy.setStatus('Y');
 		policy.setTerm(9);
 		policy.setSumAssured(1950000F);
 		policyRepo.save(policy);
@@ -94,7 +94,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		policy.setUser(user2);
 		policy.setPolicyDate(calendar.getTime());
 		policy.setPremium(14000F);
-		policy.setStatus("Y");
+		policy.setStatus('Y');
 		policy.setTerm(8);
 		policy.setSumAssured(2140000F);
 		policyRepo.save(policy);
@@ -122,7 +122,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		policy.setUser(user3);
 		policy.setPolicyDate(calendar.getTime());
 		policy.setPremium(13600F);
-		policy.setStatus("Y");
+		policy.setStatus('Y');
 		policy.setTerm(10);
 		policy.setSumAssured(2570000F);
 		policyRepo.save(policy);
