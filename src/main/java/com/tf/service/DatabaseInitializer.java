@@ -37,7 +37,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		user.setFirstName("James");
 		user.setLastName("Hill");
 		user.setDob(calendar.getTime());
-		user.setSmokerFlag('N');
+		user.setSmokerFlag("N");
 		user.setState("California");
 		userRepo.save(user);
 		
@@ -94,7 +94,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		policy.setUser(user2);
 		policy.setPolicyDate(calendar.getTime());
 		policy.setPremium(14000F);
-		policy.setStatus('Y');
+		policy.setStatus("Y");
 		policy.setTerm(8);
 		policy.setSumAssured(2140000F);
 		policyRepo.save(policy);
